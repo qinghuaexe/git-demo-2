@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下载动画</title>
+    <style>
+        .loading{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .loading::before,.loading::after{
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            background: #000;
+            border-radius: 50%;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            animation: s 1.5s linear infinite;
+        }
+        .loading::after{
+            animation-delay: 0.75s
+        }
+        @keyframes s {
+            0%{
+                width: 0px;height: 0px; opacity: 1;
+            }
+            100%{
+                width: 100px; height: 100px; opacity: 0;
+            }
+        }    
+    </style>
+</head>
+<body>
+    <div class="loading"></div>
+</body>
+</html>
